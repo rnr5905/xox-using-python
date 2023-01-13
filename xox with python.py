@@ -1,3 +1,6 @@
+import turtle as t1
+t=t1.Turtle()
+spnt=t1.Screen()
 def drawp1(n):
     tt.pensize(5)
     tt.up()
@@ -350,41 +353,61 @@ def drawp2(n):
         tt.pd()
         tt.forward(23)
 
+
+#sc=t.Screen()
+
+t1.pd()
+t1.clear()
+tt=t1.Turtle()
+tt.ht()
+t1.ht()
+t1.speed(500)
+tt.speed(3)
+kk=t1.Turtle()
+ps1=0
+ps2=0
+t1.forward(150)
+t1.right(90)
+t1.forward(150)
+t1.right(90)
+t1.forward(150)
+t1.right(90)
+t1.forward(150)
+t1.right(180)
+#print("6tutfytfty")
+t1.setx(50)
+t1.forward(150)
+t1.right(180)
+t1.setx(100)
+t1.forward(150)
+t1.setx(150)
+t1.right(180)
+t1.forward(50)
+t1.right(90)
+t1.forward(150)
+t1.left(90)
+t1.forward(50)
+t1.left(90)
+t1.forward(150)
+p1=[]
+p2=[]
+p=[]
+c=0
+ff=0
+t.speed(3)
 while(True):
-    import turtle as t
-    #sc=t.Screen()
-    tt=t.Turtle()
+      #sc=t.Screen()
+    t.clear()
+    tt.clear()
+    t.pd()
+    tt=t1.Turtle()
     tt.ht()
     t.ht()
     t.speed(500)
     tt.speed(3)
-    kk=t.Turtle()
+    kk=t1.Turtle()
     ps1=0
     ps2=0
-    t.forward(150)
-    t.right(90)
-    t.forward(150)
-    t.right(90)
-    t.forward(150)
-    t.right(90)
-    t.forward(150)
-    t.right(180)
-    t.setx(50)
-    t.forward(150)
-    t.right(180)
-    t.setx(100)
-    t.forward(150)
-    t.setx(150)
-    t.right(180)
-    t.forward(50)
-    t.right(90)
-    t.forward(150)
-    t.left(90)
-    t.forward(50)
-    t.left(90)
-    t.forward(150)
-    '''kk=int(input())
-    t.forward(kk)'''
     p1=[]
     p2=[]
     p=[]
@@ -395,6 +418,7 @@ while(True):
         kk.ht()
         t.up()
         kk.speed(1)
+        t.speed(3)
         if 1 in p1 and 2 in p1 and 3 in p1:
             kk.penup()
             kk.setx(-15)
@@ -466,7 +490,7 @@ while(True):
             kk.right(90)
             kk.pd()
             kk.forward(175)
-            t.up()
+            
             t.clear()
             tt.clear()
             t.write(" PLAYER 1 WINS ",True,align='right',font=('Arial',25,'normal'))
@@ -597,14 +621,18 @@ while(True):
             ff=1
 
         if c%2==0:
-            k=t.numinput("player 1 ","enter choice")
+            k=t1.numinput("player 1 ","enter choice")
+            if k<1 or k>9:
+                continue
             if k in p1 or k in p2:
                 continue
             p1.append(k)
             p.append(k)
             drawp1(k)
         else:
-            k=t.numinput("player 2 ","enter choice")
+            k=t1.numinput("player 2 ","enter choice")
+            if k<1 or k>9:
+                continue
             if k in p1 or k in p2:
                 continue
             p2.append(k)
@@ -612,20 +640,19 @@ while(True):
             drawp2(k)
             
         c+=1 
-    if c==9:
-        t.clear()
+    if c==9 and ff==1:
+        #t1.clear()
         tt.clear()
         kk.clear()
         t.write(" TIE ",True,align='right',font=('Arial',25,'normal'))
-        t.clear()
-        t3=t.numinput("enter choice","play again : 1\quit : 2")
+        t3=spnt.numinput("enter choice","play again : 1\nquit : 2")
         if t3==1:
             continue
         elif t3==2:
             break
     else:
-        t.clear()
-        t3=t.numinput("enter choice","play again : 1\nquit : 2")
+        #t1.clear()
+        t3=spnt.numinput("enter choice","play again : 1\n \nquit : 2")
         if t3==1:
             continue
         elif t3==2:
