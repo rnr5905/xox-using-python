@@ -640,7 +640,7 @@ while(True):
             drawp2(k)
             
         c+=1 
-    if c==9 and ff==1:
+    if c==9 and ff==0:
         #t1.clear()
         tt.clear()
         kk.clear()
